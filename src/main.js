@@ -16,9 +16,13 @@ function loadItems() {
 function displayItems(items) {
   // 부모 컨테이너안에 데이터를 추가해야한다. 컨테이너 요소 먼저 정의
   const container = document.querySelector(".items");
+
+  // 위의 querySelector로 받아온 items data 배열을 map을 이용해 html요소로 변환 (html li tag로 변환)
+  // 문자열의 배열을 한가지의 문자열로 병합하기위해 쓸 수 있는것은 join이라는 api
   container.innerHTML = items.map((item) => createHTMLString(item)).join("");
 }
 
+// string template (``)을 활용해서 문자열을 활용 => 이미지나, 타입등을 ${}사용해서 활용하기 좋다.
 // Create HTML list item from the given data item
 function createHTMLString(item) {
   return `

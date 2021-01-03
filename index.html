@@ -7,41 +7,34 @@
     <link rel="stylesheet" href="style.css" />
     <script src="src/main.js" defer></script>
   </head>
-  
+
   <body>
+    <!--Logo-->
+    <img src="/img/logo.png" alt="Logo" class="logo" />
 
-    <header>
-      <div class="logo">
-        <img src="img/logo.png">
-      </div>
-    </header>
+    <!--Buttons-->
 
-    <section>
-      <ul class="menu">
-            <button><img src="img/blue_p.png"></button>
-            <button><img src="img/blue_t.png"></button>
-            <button><img src="img/blue_s.png"></button>
-            <button><li class="menu__color--blue">Blue</li></button>
-            <button><li class="menu__color--yellow">Yellow</li></button>
-            <button><li class="menu__color--pink">Pink</li></button>
-      </ul>
-    </section>
-    
-    <section>
-      <div class="main">
-        <div class="main__list">
-          <div class="main__list__img">
-            <img src="img/pink_s.png">
-          </div>
-          <div class="main__list__description">
-            female,large size
-          </div>
-          <div class="main__rightEmpty"></div>
-        </div>
-      </div>
+    <section class="buttons">
+      <button class="btn">
+        <img src="/img/blue_p.png" alt="pants" class="imgBtn" />
+      </button>
+      <button class="btn">
+        <img src="/img/blue_s.png" alt="skirt" class="imgBtn" />
+      </button>
+      <button class="btn">
+        <img src="/img/blue_t.png" alt="tshirt" class="imgBtn" />
+      </button>
+      <button class="btn colorBtn blue">Blue</button>
+      <button class="btn colorBtn yellow">Yellow</button>
+      <button class="btn colorBtn pink">Pink</button>
     </section>
 
-
-
+    <!--items-->
+    <ul class="items">
+      <li class="item">
+        <img src="/img/pink_p.png" alt="pants" class="item__thumbnail" />
+        <span class="item__description">Female, large</span>
+      </li>
+    </ul>
   </body>
-  </html>
+</html>

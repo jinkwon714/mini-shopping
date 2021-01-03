@@ -20,6 +20,9 @@ function displayItems(items) {
   // 위의 querySelector로 받아온 items data 배열을 map을 이용해 html요소로 변환 (html li tag로 변환)
   // 문자열의 배열을 한가지의 문자열로 병합하기위해 쓸 수 있는것은 join이라는 api
   container.innerHTML = items.map((item) => createHTMLString(item)).join("");
+
+  // const HTML = items.map((item) => createHTMLString(item));
+  // console.log(HTML);
 }
 
 // string template (``)을 활용해서 문자열을 활용 => 이미지나, 타입등을 ${}사용해서 활용하기 좋다.
@@ -31,6 +34,30 @@ function createHTMLString(item) {
     <span class="item__description">${item.gender}, ${item.size}</span>
   </li>
   `;
+}
+
+function onButtonClick(event, items) {
+  const dataset = event.target.dataset;
+  const key = dataset.key;
+  const value = dataset.value;
+
+  // console.log(event.target.dataset.key);
+  // console.log(event.target.dataset.value);
+
+  if (key === null || value === null) {
+    return;
+  }
+
+  displayItems(items.filter((item) => item[key] === value));
+}
+
+function setEventListenrs(items) {
+  const logo = document.querySelector(".logo");
+  // 이벤트 위임 = 하나하나의 이벤트리스너를 반복하는것보다 buttone들이 들어있는 buttons를 활용하는것이 효율적
+  const buttons = document.querySelector(".buttons");
+  // logo가 클릭이 되면 displayitems가 되게 만든다.
+  logo.addEventListener("click", () => displayItems(items));
+  buttons.addEventListener("click", () => onButtonClick(event, items));
 }
 
 // 0. 이런식으로 크게 전략을 설정해두고 시작해야한다.
